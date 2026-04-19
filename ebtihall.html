@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>متجر العبايات</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(#f8f6f2, #ece7df);
+      color: #333;
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(255,255,255,0.95);
+      padding: 15px;
+      text-align: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    header a {
+      color: #8b6f47;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 60px 40px;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #5c4630;
+    }
+
+  
+    .hero-box {
+      background: #fff;
+      padding: 15px;
+      border-radius: 20px;
+      max-width: 350px;
+      margin: 0 auto 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+
+    .hero-box img {
+      width: 100%;
+      border-radius: 15px;
+    }
+
+    .card-box {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 15px;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      max-width: 400px;
+      margin: auto;
+    }
+
+    .card-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .btn-custom {
+      background: #c8a97e;
+      color: white;
+      border-radius: 20px;
+      border: none;
+    }
+
+    #cart {
+      position: fixed;
+      left: 20px;
+      top: 80px;
+      width: 260px;
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #fff;
+      margin-top: 50px;
+      color: #8b6f47;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <a href="#about">من نحن</a>
+  <a href="#shop">العبايات</a>
+  <a href="#contact">تواصل</a>
+</header>
+
+<section id="about">
+
+  <div class="hero-box">
+    <img src="ebaa11.jpg" alt="عباية">
+  </div>
+  <h1>متجر العبايات</h1>
+  <p>أناقة هادئة بتصاميم راقية تناسب كل الأذواق</p>
+ <p>أكتشاف مجموعة مميزة من العبايات التي تجمع بين أناقتها وراحة ارتدائها</p>
+</section>
+
+<section id="shop">
+  <h2>منتجاتنا</h2>
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-12">
+        <div class="card-box">
+          <img src="abaya1.jpg" class="img-fluid mb-3">
+          <h3>عباية كلاسيك</h3>
+          <p>تصميم بسيط وأنيق</p>
+          <h4>150ريال</h4>
+          <button class="btn btn-custom w-100" onclick="addToCart('عباية كلاسيك',250)">أضف للسلة</button>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="card-box">
+          <img src="abaya2.jpg"class="img-fluid mb-3">
+          <h3>عباية مطرزة</h3>
+          <p>تفاصيل ناعمة وفخمة</p>
+          <h4>300 ريال</h4>
+          <button class="btn btn-custom w-100" onclick="addToCart('عباية مطرزة',320)">أضف للسلة</button>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="card-box">
+          <img src="abaya3.jpg" class="img-fluid mb-3">
+          <h3>عباية عصرية</h3>
+          <p>ستايل حديث وناعم</p>
+          <h4>180 ريال</h4>
+          <button class="btn btn-custom w-100" onclick="addToCart('عباية عصرية',280)">أضف للسلة</button>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="card-box">
+          <img src="abaya4.jpg"class="img-fluid mb-3">
+          <h3>عباية عملية</h3>
+           <p>تصميم عملي ومريح</p>
+          <h4>200 ريال</h4>
+          <button class="btn btn-custom w-100" onclick="addToCart('عباية مطرزة',320)">أضف للسلة</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div id="cart">
+  <h5>🛒 السلة</h5>
+  <div id="cart-items"></div>
+  <hr>
+  <h6>المجموع: <span id="total">0</span> ريال</h6>
+</div>
+
+<section id="contact">
+  <h2>تواصل معنا</h2>
+  <p>📞 966549534844+</p>
+  <p>📧 <a href="mailto:almikhlafi2006@gmail.com">almikhlafi2006@gmail.com</a></p>
+</section>
+
+<footer>
+  © 2026 متجر العبايات
+</footer>
+
+<script>
+  let cart = [];
+  let total = 0;
+
+  function addToCart(name, price) {
+    cart.push({name, price});
+    total += price;
+    updateCart();
+  }
+
+  function updateCart() {
+    let container = document.getElementById("cart-items");
+    container.innerHTML = "";
+
+    cart.forEach((item) => {
+      container.innerHTML += `
+        <div class="cart-item">
+          <span>${item.name}</span>
+          <span>${item.price} ريال</span>
+        </div>
+      `;
+    });
+
+    document.getElementById("total").innerText = total;
+  }
+</script>
+
+</body>
+</html>
